@@ -7,9 +7,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Ofertas</title>
     <link rel="stylesheet" href="CSS/styles.css"/>
-
+    
   </head>
   <body>
+
+    <!-- Inicio Menu -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+          <a class="navbar-brand" href="#">
+            <img src="IMG/Logo.jpeg" alt="" width="30" height="24" class="d-inline-block align-text-top">
+            FIND UR WORD
+          </a>
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Ofertas
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <li><a class="dropdown-item" href="#">Ver ofertas</a></li>
+                <li><a class="dropdown-item" href="ofertas_form.html">Crear Oferta</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Perfil</a>
+            </li>
+          </ul>
+          <a class="btn btn-outline-danger" href="index.html" role="button">Cerrar Sesión</a>
+        </div>
+      </div>
+    </nav>
+    <!-- Fin Menu -->
+
+    <!-- Inicio Formulario -->
     <div class="container">
         <br>
         <h2>Oferta de trabajo</h2>
@@ -76,7 +109,13 @@
                               <input type="text" class="form-control form-control-lg" id="colFormLabelLg" placeholder="Ingresar Salario Maximo" required>
                             </div>
           </form>
-    </div>  
+    </div>
+    <!-- Fin Formulario -->
+    
+    <div class="d-grid gap-2 col-6 mx-auto">
+      <button type="button" class="btn btn-success">Success</button>
+    </div>
+
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
   </body>
 </html>
