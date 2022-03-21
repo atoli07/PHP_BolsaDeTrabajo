@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 12-03-2022 a las 07:35:29
+-- Tiempo de generación: 21-03-2022 a las 21:38:09
 -- Versión del servidor: 10.4.21-MariaDB
 -- Versión de PHP: 8.0.10
 
@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `bolsatrabajo`
 --
+CREATE DATABASE IF NOT EXISTS `bolsatrabajo` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `bolsatrabajo`;
 
 -- --------------------------------------------------------
 
@@ -116,18 +118,7 @@ CREATE TABLE `experencialaboral` (
   `NombreEmpresa` varchar(50) NOT NULL,
   `Puesto` varchar(20) NOT NULL,
   `FechaInicio` date NOT NULL,
-  `FechaFinal` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `experiencialaboxcurriculum`
---
-
-CREATE TABLE `experiencialaboxcurriculum` (
-  `Id` int(11) NOT NULL,
-  `IdExperencia` varchar(6) NOT NULL,
+  `FechaFinal` date NOT NULL,
   `IdCurriculum` varchar(6) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -142,18 +133,7 @@ CREATE TABLE `formacionacademica` (
   `NombreFormacion` varchar(30) NOT NULL,
   `Institucion` varchar(30) NOT NULL,
   `FechaInicio` date NOT NULL,
-  `FechaFinal` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `formacionacadxcurriculum`
---
-
-CREATE TABLE `formacionacadxcurriculum` (
-  `Id` int(11) NOT NULL,
-  `IdFormacionAcademica` int(11) NOT NULL,
+  `FechaFinal` date NOT NULL,
   `IdCurriculum` varchar(6) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -330,28 +310,14 @@ ALTER TABLE `empresas`
 -- Indices de la tabla `experencialaboral`
 --
 ALTER TABLE `experencialaboral`
-  ADD PRIMARY KEY (`IdExperencia`);
-
---
--- Indices de la tabla `experiencialaboxcurriculum`
---
-ALTER TABLE `experiencialaboxcurriculum`
-  ADD PRIMARY KEY (`Id`),
-  ADD KEY `fk_exp_cv` (`IdExperencia`),
-  ADD KEY `fk_cv_exp` (`IdCurriculum`);
+  ADD PRIMARY KEY (`IdExperencia`),
+  ADD KEY `fk_cv_explab` (`IdCurriculum`);
 
 --
 -- Indices de la tabla `formacionacademica`
 --
 ALTER TABLE `formacionacademica`
-  ADD PRIMARY KEY (`IdFormacionAcademica`);
-
---
--- Indices de la tabla `formacionacadxcurriculum`
---
-ALTER TABLE `formacionacadxcurriculum`
-  ADD PRIMARY KEY (`Id`),
-  ADD KEY `fk_facad_cv` (`IdFormacionAcademica`),
+  ADD PRIMARY KEY (`IdFormacionAcademica`),
   ADD KEY `fk_cv_facad` (`IdCurriculum`);
 
 --
@@ -450,22 +416,10 @@ ALTER TABLE `empresas`
   MODIFY `IdEmpresa` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de la tabla `experiencialaboxcurriculum`
---
-ALTER TABLE `experiencialaboxcurriculum`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT de la tabla `formacionacademica`
 --
 ALTER TABLE `formacionacademica`
   MODIFY `IdFormacionAcademica` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de la tabla `formacionacadxcurriculum`
---
-ALTER TABLE `formacionacadxcurriculum`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `formacionextraacad`
@@ -545,18 +499,16 @@ ALTER TABLE `direccionesxempresa`
   ADD CONSTRAINT `fk_direc_empresa` FOREIGN KEY (`IdDireccion`) REFERENCES `direcciones` (`IdDireccion`);
 
 --
--- Filtros para la tabla `experiencialaboxcurriculum`
+-- Filtros para la tabla `experencialaboral`
 --
-ALTER TABLE `experiencialaboxcurriculum`
-  ADD CONSTRAINT `fk_cv_exp` FOREIGN KEY (`IdCurriculum`) REFERENCES `curriculums` (`IdCurriculum`),
-  ADD CONSTRAINT `fk_exp_cv` FOREIGN KEY (`IdExperencia`) REFERENCES `experencialaboral` (`IdExperencia`);
+ALTER TABLE `experencialaboral`
+  ADD CONSTRAINT `fk_cv_explab` FOREIGN KEY (`IdCurriculum`) REFERENCES `curriculums` (`IdCurriculum`);
 
 --
--- Filtros para la tabla `formacionacadxcurriculum`
+-- Filtros para la tabla `formacionacademica`
 --
-ALTER TABLE `formacionacadxcurriculum`
-  ADD CONSTRAINT `fk_cv_facad` FOREIGN KEY (`IdCurriculum`) REFERENCES `curriculums` (`IdCurriculum`),
-  ADD CONSTRAINT `fk_facad_cv` FOREIGN KEY (`IdFormacionAcademica`) REFERENCES `formacionacademica` (`IdFormacionAcademica`);
+ALTER TABLE `formacionacademica`
+  ADD CONSTRAINT `fk_cv_facad` FOREIGN KEY (`IdCurriculum`) REFERENCES `curriculums` (`IdCurriculum`);
 
 --
 -- Filtros para la tabla `formacionextraxcurriculum`
