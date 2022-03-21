@@ -1,0 +1,10 @@
+nav{
+    height: 150px;
+    background-color: #595959;
+    display: grid;
+    grid-template-areas: "logo      opciones    inicio";
+}
+
+img#logo{
+    width: 75px;
+}
