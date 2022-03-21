@@ -11,70 +11,43 @@
   </head>
   <body>
     <!-- Inicio Menu -->
-    <nav class="navbar navbar-expand-lg">
+    <nav class="navbar-expand-lg navbar-dark fixed-top" id="menu">
       <div class="container-fluid">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
           <a class="navbar-brand" href="#">
-            <img src="IMG/logo_1_00000.png" alt="" id="logo" class="d-inline-block align-text-top">
-            FIND UR WORK
+            <img src="IMG/logo_1_00000.png" alt="" class="d-inline-block align-text-top logo">
+            <p class="logo">FIND UR WORK</p>
           </a>
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0 gap-3">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
+              <a class="nav-link active shadow-sm" aria-current="page" href="index.html">Inicio</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="#">Nosotros</a>
+              <a class="nav-link active shadow-sm" href="#">Ofertas</a>
             </li>
           </ul>
-          <a class="btn btn-outline-success" href="login.html" role="button">Iniciar Sesión</a>
+          <a class="nav-link active text-white shadow-sm gap-3" href="#">Iniciar Sesión</a>
+          <a class="nav-link active text-white shadow-sm" href="#">Crear una cuenta</a>
         </div>
       </div>
     </nav>
     <!-- Fin Menu -->
     <br>
-    <!-- Inicio de Carrusel de Imagenes -->
-    <div class="container">
-      <div id="carouselExampleDark" class="carousel carousel-dark slide d-block w-100" data-bs-ride="carousel">
-        <div class="carousel-indicators">
-          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
-          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
-        </div>
-        <div class="carousel-inner">
-          <div class="carousel-item active" data-bs-interval="10000">
-            <img src="IMG/Carrusel/Carrusel_1.jpg" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-              <h5>Encuentra un buen trabajo</h5>
-            </div>
-          </div>
-          <div class="carousel-item" data-bs-interval="2000">
-            <img src="IMG/Carrusel/Carrusel_2.jpg" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-              <h5>Trabajo con buen ambiente laboral</h5>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img src="IMG/Carrusel/Carrusel_3.jpg" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-              <h5>Búscalo desde tu casa</h5>
-            </div>
-          </div>
-        </div>
-        <!-- <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button> -->
+    <!-- Banner -->
+    <div class="banner w-100 vh-100 d-flex justify-content-center align-items-center">
+      <div class="content text-center">
+        <h1 class="text-white">Encuentra trabajo desde la comodidad de tu hogar</h1>
       </div>
     </div>
-    
-    <!-- Fin de Carrusel de Imagenes -->
-    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- Contenido de pagina -->
+    <div class="container my-5 d-grid gap-5">
+      <div class="p-5 border">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem repellat ullam optio assumenda voluptates incidunt dolore ducimus? Culpa eius, nesciunt tenetur maxime error voluptatibus excepturi ratione molestias, repellat adipisci doloremque.</p>
+      </div>
+    </div>
   </body>
+  <script src="js/nav.js"></script>
 </html>
