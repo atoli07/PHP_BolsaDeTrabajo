@@ -1,16 +1,4 @@
-<!doctype html>
-<html lang="es">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Login</title>
-    <link rel="stylesheet" href="CSS/styles.css"/>
-
-  </head>
-  <body>
-    <section class="h-100 gradient-form" style="background-color: #eee;">
+<section class="h-100 gradient-form" style="background-color: #eee;">
       <div class="container py-5 h-100">
         <div class="row d-flex justify-content-center align-items-center h-100">
           <div class="col-xl-10">
@@ -65,5 +53,3 @@
     </section>
 
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-  </body>
-</html>
