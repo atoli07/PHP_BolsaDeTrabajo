@@ -1,13 +1,12 @@
 <?php
- require('Modularidad\ofertas_form\header.ofertas_form.php');
+ require('Modularidad\header.php');
 ?>
   <body>
     <?php
-        require('Modularidad\ofertas_form\nav.ofertas_form.php');
+        require('Modularidad\menu.php');
     ?>
     <?php
         require('Modularidad\ofertas_form\form.ofertas_form.php');
     ?>
   </body>
-  <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 </html>

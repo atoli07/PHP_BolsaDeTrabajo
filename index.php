@@ -1,9 +1,9 @@
 <?php
- require('Modularidad\index\header.index.php');
+ require('Modularidad\header.php');
 ?>
   <body>
     <?php
-        require('Modularidad\index\nav.index.php');
+        require('Modularidad\index\menu.index.php');
     ?>
     <?php
         require('Modularidad\index\ban.index.php');

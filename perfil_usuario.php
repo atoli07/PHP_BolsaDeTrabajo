@@ -1,13 +1,12 @@
 <?php
- require('Modularidad\perfil_usuario\header.perfil_usuario.php');
+ require('Modularidad\header.php');
 ?>
   <body>
     <?php
-        require('Modularidad\perfil_usuario\nav.perfil_usuario.php');
+        require('Modularidad\menu.php');
     ?>
     <?php
         require('Modularidad\perfil_usuario\content.perfil_usuario.php');
     ?>
   </body>
-  <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 </html>
