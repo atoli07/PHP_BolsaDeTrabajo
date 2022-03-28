@@ -1,15 +1,15 @@
 <?php
- require('Modularidad\header.php');
+ require_once('pages\mod\header.php');
 ?>
   <body>
     <?php
-        require('Modularidad\index\menu.index.php');
+        require_once('pages\index\menu.index.php');
     ?>
     <?php
-        require('Modularidad\index\ban.index.php');
+        require_once('pages\index\ban.index.php');
     ?>
     <?php
-        require('Modularidad\index\content.php');
+        require_once('pages\index\content.php');
     ?>
   </body>
   <script src="js/nav.js"></script>

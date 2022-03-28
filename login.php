@@ -1,9 +1,9 @@
 <?php
- require('Modularidad\header.php');
+ require_once('pages\mod\header.php');
 ?>
   <body>
     <?php
-        require('Modularidad\login\form.login.php');
+        require_once('pages\login\form.login.php');
     ?>
   </body>
 </html>

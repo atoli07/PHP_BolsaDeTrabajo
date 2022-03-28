@@ -67,8 +67,8 @@ div.contenedor-login i{
     color: #fff;
 }
 
-span.input-group-text i,
-label.input-group-text i{
+span.input-group-text.oferta i,
+label.input-group-text.oferta i{
     padding-right: 25px;
 }
 

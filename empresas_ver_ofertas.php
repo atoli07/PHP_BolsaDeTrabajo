@@ -6,7 +6,7 @@
         require_once('pages\mod\menu.php');
     ?>
     <?php
-        require_once('pages\usuarios\perfil_usuario\content.perfil_usuario.php');
+        require_once('pages\empresas\ofertas\table.ver_ofertas.php');
     ?>
   </body>
 </html>
