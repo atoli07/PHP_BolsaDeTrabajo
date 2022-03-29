@@ -1,16 +1,9 @@
 <?php
- require('Modularidad\login\header.login.php');
+ require_once('pages\mod\header.php');
 ?>
   <body>
     <?php
-        require('Modularidad\login\form.login.php');
-    ?>
-    <?php
-        require('Modularidad\index\ban.index.php');
-    ?>
-    <?php
-        require('Modularidad\index\content.php');
+        require_once('pages\login\form.login.php');
     ?>
   </body>
-  <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 </html>

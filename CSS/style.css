@@ -1,16 +1,16 @@
-nav{
+nav.index{
     display: flex;
     align-items: center;
     margin: 0;
     padding: 0;
 }
 
-img.logo{
+img.logo-index{
     width: 100px;
     margin: auto;
 }
 
-p.logo{
+p.logo-index{
     font-family: 'Agency FB Bold', arial;
 }
 
@@ -20,6 +20,138 @@ div.banner{
     left: 0;
     margin: 0;
     padding: 0;
-    background-image: url('../IMG/banner.webp');
+    background-image: url('../IMG/banner.jpg');
     background-size: cover;
+}
+
+div.contenedor-login{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: "formulario    imagen";
+    gap: 15px;
+
+    width: 75%;
+    margin: auto;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+form.formulario{
+    grid-area: formulario;
+}
+
+div.imagen{
+    width: 100%;
+    grid-area: imagen;
+    background-image: url('../IMG/login.jpg');
+    background-size: cover;
+    opacity: 0.89;
+    border-radius: 0 10px 10px 0;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+}
+div.imagen h1{
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-shadow: 1px 3px 2px rgba(0,0,0,0.6);
+    animation: fadeIn linear 2.5s;
+}
+
+div.contenedor-login span.icono{
+    background-color: #4B6D7E;
+}
+
+div.contenedor-login i{
+    color: #fff;
+}
+
+span.input-group-text.oferta i,
+label.input-group-text.oferta i{
+    padding-right: 25px;
+}
+
+div.row{
+    padding: 1em;
+}
+
+div.btn-group{
+    width: 100%;
+}
+
+.boton{
+    width: 100%;
+	height: 35px;
+	background:white;
+	color: #728E98;
+	border: 1.5px solid #728E98;
+	cursor: pointer;
+	transition: .3s ease all;
+	border-radius: 5px;
+	position: relative;
+	overflow: hidden;
+}
+.boton span{
+	position: relative;
+	z-index: 2;
+	transition: .3 ease all;
+}
+.boton.estilizado::after{
+    content: "";
+    width: 115%;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left:calc(-100% - 15%);
+    border-bottom: 35px solid #728E98;
+    border-right: 35px solid transparent;
+    transition: .4s ease-in-out all;
+}
+.boton.estilizado:hover::after{
+    left: 0;
+}
+.boton.estilizado:hover{
+    color: #fff;
+}
+
+@keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+
+@-moz-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+  
+@-webkit-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+  
+@-o-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+  
+@-ms-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+
+@media screen and (max-width:768px){
+    div.contenedor-login{
+        grid-template-columns: auto;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: "imagen"
+                             "formulario";
+    }
+    div.imagen{
+        border-radius: 10px 10px 0px 0;
+    }
+
+    form.formulario{
+        padding:20px;
+    }
 }
