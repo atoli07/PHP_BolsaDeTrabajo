@@ -6,9 +6,8 @@ $usuario= isset($_POST['usuario']) ? $_POST['usuario'] : "";
 $contraseña = isset($_POST['contraseña']) ? $_POST['contraseña'] : "";
 
 
-
 //Comprobamos que en el boton del formulario se reciba informacion
-if (isset($_POST['Ingreso'])) {
+if (isset($_POST['ingresar'])) {
     //Hacer la conexion a la base de datos
     $conexion= mysqli_connect("localhost","root","","bolsatrabajo");
 
@@ -25,11 +24,12 @@ if (isset($_POST['Ingreso'])) {
           //Aqui redirigimos hacia el archivo de la pagina principal del usuario 
           $_SESSION['usuario'] = $usuario;
           $_SESSION['contraseña'] = $contraseña;
-          header("location:indexsam.php");
+          header("location:./../../perfil_usuario.php");
         
         } else {
             //Si se llego hasta aqui es porque no se reconocio a un usuario natural y ahora lo intentara con una cuenta de empresa  
             $consulta="select * from empresas where Correo = '$usuario' and Contra = '$contraseña'";
+            
             $resultado=mysqli_query($conexion, $consulta);
             $filas=mysqli_num_rows($resultado);
             if($filas>0){
@@ -38,7 +38,7 @@ if (isset($_POST['Ingreso'])) {
                 //Aqui redirigimos hacia el archivo de la pagina principal del usuario 
                 $_SESSION['usuario'] = $usuario;
                 $_SESSION['contraseña'] = $contraseña;
-                header("location:indexempre.php");
+                header("location:./../../empresas_ver_ofertas.php");
                 }else {
                      echo "Error en la autentificacion";
                     }
