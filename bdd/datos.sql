@@ -1,14 +1,14 @@
 INSERT INTO empresas VALUES
-("10001","VALORES Y SERVICIOS REGIONALES","usuario@vsr.sv.cv","12345678"),
-("10002","ALMACENES SIMAN","usuario@siman.sv.cv","12345678"),
-("10003","POLLO CAMPERO","usuario@pollo.campero.sv.cv","12345678"),
-("10004","TIGO","usuario@tigo.sv.cv","12345678"),
-("10005","DON POLLO","usuario@don.pollo.sv.cv","12345678"),
-("10006","RH SOLUCIONES","usuario@rh.sv.cv","12345678"),
-("10007","PAE","usuario@pae.sv.cv","12345678"),
-("10008","ASEI","usuario@asei.sv.cv","12345678"),
-("10009","PANADERIA EL ROSARIO","usuario@per.sv.cv","12345678"),
-("10010","BANCO CUSCATLÁN","usuario@bc.sv.cv","12345678")
+("10001","VALORES Y SERVICIOS REGIONALES","usuario@vsr.sv.cv","12345678","Empresas_logos/10001.jpg"),
+("10002","ALMACENES SIMAN","usuario@siman.sv.cv","12345678","Empresas_logos/10002.jpg"),
+("10003","POLLO CAMPERO","usuario@pollo.campero.sv.cv","12345678","Empresas_logos/10003.png"),
+("10004","TIGO","usuario@tigo.sv.cv","12345678","Empresas_logos/10004.png"),
+("10005","DON POLLO","usuario@don.pollo.sv.cv","12345678","Empresas_logos/10005.jpg"),
+("10006","RH SOLUCIONES","usuario@rh.sv.cv","12345678","Empresas_logos/10006.png"),
+("10007","PAE","usuario@pae.sv.cv","12345678","Empresas_logos/10007.png"),
+("10008","ASEI","usuario@asei.sv.cv","12345678","Empresas_logos/10008.png"),
+("10009","PANADERIA EL ROSARIO","usuario@per.sv.cv","12345678","Empresas_logos/10009.png"),
+("10010","BANCO CUSCATLÁN","usuario@bc.sv.cv","12345678","Empresas_logos/10010.jpg")
 
 INSERT INTO detallesoferta VALUES
 ("DOF001","Servicios","Asistente Contable","Tiempo completo","Bachiller","de uno a tres años","18 / 70","600","600"),
