@@ -37,11 +37,11 @@ div.contenedor-login{
     border-radius: 10px;
 }
 
-form.formulario{
+div.contenedor-login form.formulario{
     grid-area: formulario;
 }
 
-div.imagen{
+div.contenedor-login div.imagen{
     width: 100%;
     grid-area: imagen;
     background-image: url('../IMG/login.jpg');
@@ -52,7 +52,7 @@ div.imagen{
     justify-content:center;
     align-items:center;
 }
-div.imagen h1{
+div.contenedor-login div.imagen h1{
     font-weight: bold;
     letter-spacing: 2px;
     text-shadow: 1px 3px 2px rgba(0,0,0,0.6);
@@ -65,6 +65,39 @@ div.contenedor-login span.icono{
 
 div.contenedor-login i{
     color: #fff;
+}
+
+section.contenedor-new-user{
+    width: 100%;
+    background-image: url('../IMG/login.jpg');
+    background-size: cover;
+    /* display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 100vh;
+
+    grid-template-areas: "imagen    formulario"; */
+}
+
+/* section.contenedor-new-user div.imagen{
+    width: 100%;
+    grid-area: imagen;
+    opacity: 0.89;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+} */
+
+/* section.contenedor-new-user div.imagen img{
+    width: 100%;
+    height: 100%;
+} */
+/* 
+section.contenedor-new-user div.formulario{
+    grid-area: formulario;
+} */
+
+section.contenedor-new-user form{
+    width: 75%;
 }
 
 span.input-group-text.oferta i,

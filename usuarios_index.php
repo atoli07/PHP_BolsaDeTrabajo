@@ -6,6 +6,9 @@
         require_once('pages\mod\menu.php');
     ?>
     <?php
+        require_once('pages\usuarios\perfil_usuario\content.perfil_usuario.php');
+    ?>
+    <?php
         require_once('pages\usuarios\index\content.index.php');
     ?>
   </body>

@@ -1,7 +1,7 @@
 <section class="w-100 vh-100 gradient-form d-flex justify-content-center" style="background-color: #1C4965;">
   <div class="contenedor-login">
     <form class="formulario p-md-5 mx-md" action="" method="post">
-    <div class="input-group mb-3">
+      <div class="input-group mb-3">
         <span class="input-group-text icono"><i class="bi bi-envelope"></i></span>
         <input require_onced aria-require_onced="Por favor ingrese un correo válido" type="mail" class="form-control" name="correo" placeholder="Ingrese su correo">
       </div>
