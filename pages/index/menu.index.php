@@ -27,7 +27,7 @@
           <li>
             <hr class="dropdown-divider">
           </li>
-          <li><a class="dropdown-item" href="">Crear cuenta empresas</a></li>
+          <li><a class="dropdown-item" href="new_emp.php">Crear cuenta empresas</a></li>
         </ul>
       </li>
     </div>

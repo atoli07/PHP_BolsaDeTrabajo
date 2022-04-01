@@ -1,4 +1,4 @@
-<section class="w-100 vh-100 gradient-form d-flex justify-content-center" style="background-color: #1C4965;">
+<section class="w-100 vh-100 d-flex justify-content-center" style="background-color: #1C4965;">
   <div class="contenedor-login">
     <form class="formulario p-md-5 mx-md" action="Funciones/Login/Validaciones.php" method="post">
       <div class="input-group mb-3">
