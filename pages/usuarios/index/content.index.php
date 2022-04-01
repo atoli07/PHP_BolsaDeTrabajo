@@ -23,7 +23,7 @@
 $contador = 2;
 $contador2 = 1;
 
-include_once("Funciones/conexión/BDD.php");
+include_once("../../../Funciones/conexión/BDD.php");
 
 // $SQL = "SELECT* FROM ofertas JOIN empresas ON ofertas.IdEmpresa = empresas.IdEmpresa";
 $SQL = "SELECT ofertas.NombreOferta, empresas.NombreEmpresa, detallesoferta.AreaEmpresa, ofertas.Estado, detallesoferta.NivelExperencia, empresas.url_logo
@@ -47,7 +47,7 @@ $objeto = $BDD_DSS->query($SQL);
         $Area = $fila['AreaEmpresa'];
         $Experiencia = $fila['NivelExperencia'];
 
-        $ruta = 'IMG/';
+        $ruta = '../../../IMG/';
         $logo = $ruta. $fila['url_logo'];
         $estado;
         $estado_color;
