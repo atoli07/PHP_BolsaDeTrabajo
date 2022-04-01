@@ -14,7 +14,7 @@ if($varsesion == null || $varsesion ==''){
 ?>
   <body>
     <?php
-        require_once('pages\mod\menu.php');
+        require_once('pages\mod\menu_empresas.php');
     ?>
     <?php
         require_once('pages\empresas\ofertas\table.ver_ofertas.php');

@@ -2,8 +2,8 @@
 
 
 //Recibir datos del formulario
-$usuario= isset($_POST['usuario']) ? $_POST['usuario'] : "";
-$contraseña = isset($_POST['contraseña']) ? $_POST['contraseña'] : "";
+$usuario= isset($_POST['correo']) ? $_POST['correo'] : "";
+$contraseña = isset($_POST['contra']) ? $_POST['contra'] : "";
 
 
 //Comprobamos que en el boton del formulario se reciba informacion
@@ -24,7 +24,7 @@ if (isset($_POST['ingresar'])) {
           //Aqui redirigimos hacia el archivo de la pagina principal del usuario 
           $_SESSION['usuario'] = $usuario;
           $_SESSION['contraseña'] = $contraseña;
-          header("location:./../../perfil_usuario.php");
+          header("location:./../../usuarios_index.php");
         
         } else {
             //Si se llego hasta aqui es porque no se reconocio a un usuario natural y ahora lo intentara con una cuenta de empresa  

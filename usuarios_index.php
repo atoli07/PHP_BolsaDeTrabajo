@@ -14,7 +14,7 @@ if($varsesion == null || $varsesion ==''){
 ?>
   <body>
     <?php
-        require_once('pages\mod\menu.php');
+        require_once('pages\mod\menu_usuarios.php');
     ?>
     <?php
         require_once('pages\usuarios\perfil_usuario\content.perfil_usuario.php');

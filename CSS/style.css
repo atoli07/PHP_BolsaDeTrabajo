@@ -71,33 +71,61 @@ section.contenedor-new-user{
     width: 100%;
     background-image: url('../IMG/login.jpg');
     background-size: cover;
-    /* display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 100vh;
-
-    grid-template-areas: "imagen    formulario"; */
 }
 
-/* section.contenedor-new-user div.imagen{
-    width: 100%;
-    grid-area: imagen;
-    opacity: 0.89;
-    display: flex;
-    justify-content:center;
-    align-items:center;
-} */
-
-/* section.contenedor-new-user div.imagen img{
-    width: 100%;
-    height: 100%;
-} */
-/* 
 section.contenedor-new-user div.formulario{
-    grid-area: formulario;
-} */
+    width: 55%;
+    margin: auto;
+    background-color: #fff;
+    border-radius: 10px;
+
+    animation: slideIn 2s;
+}
 
 section.contenedor-new-user form{
-    width: 75%;
+    width: 100%;
+}
+
+section.contenedor-new-user form h2{
+    color: #4B6D7E;
+    font-weight: bold;
+}
+
+section.contenedor-new-user span.icono i{
+    color: #4B6D7E;
+}
+
+div.contenedor-new-emp{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: "imagen    formulario";
+    gap: 15px;
+}
+
+div.contenedor-new-emp div.formulario{
+    grid-area: formulario;
+}
+
+div.contenedor-new-emp div.imagen-emp{
+    grid-area: imagen;
+    background-image: url('../IMG/login_emp.jpg');
+    background-size: cover;
+}
+
+div.contenedor-new-emp div.imagen-emp h1{
+    width: 50vh;
+    font-weight: bold;
+    font-size: 75pt;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding-left: 10vw;
+    animation: fadeIn linear 2.5s;
+}
+
+div.contenedor-new-emp span.icono{
+    background-color: #121B26;
+    color: #fff;
 }
 
 span.input-group-text.oferta i,
@@ -125,11 +153,30 @@ div.btn-group{
 	position: relative;
 	overflow: hidden;
 }
+.boton-2{
+    width: 100%;
+	height: 35px;
+	background:white;
+	color: #121B26;
+	border: 1.5px solid #121B26;
+	cursor: pointer;
+	transition: .3s ease all;
+	border-radius: 5px;
+	position: relative;
+	overflow: hidden;
+}
+
 .boton span{
 	position: relative;
 	z-index: 2;
 	transition: .3 ease all;
 }
+.boton-2 span{
+    position: relative;
+	z-index: 2;
+	transition: .3 ease all;
+}
+
 .boton.estilizado::after{
     content: "";
     width: 115%;
@@ -141,10 +188,29 @@ div.btn-group{
     border-right: 35px solid transparent;
     transition: .4s ease-in-out all;
 }
+.boton-2.estilizado-2::after{
+    content: "";
+    width: 115%;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left:calc(-100% - 15%);
+    border-bottom: 35px solid #121B26;
+    border-right: 35px solid transparent;
+    transition: .4s ease-in-out all;
+}
+
 .boton.estilizado:hover::after{
     left: 0;
 }
+.boton-2.estilizado-2:hover::after{
+    left: 0;
+}
+
 .boton.estilizado:hover{
+    color: #fff;
+}
+.boton-2.estilizado-2:hover{
     color: #fff;
 }
 
@@ -171,6 +237,66 @@ div.btn-group{
 @-ms-keyframes fadeIn {
     0% {opacity:0;}
     100% {opacity:1;}
+}
+
+@keyframes slideIn {
+    from {
+      margin-top: 30%;
+      opacity: 0;
+    }
+  
+    to {
+      margin-top:11%;
+      opacity: 1;
+    }
+}
+
+@-moz-keyframes slideIn{
+    from {
+        margin-top: 30%;
+        opacity: 0;
+    }
+    
+    to {
+        margin-top:11%;
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes slideIn{
+    from {
+        margin-top: 30%;
+        opacity: 0;
+    }
+    
+    to {
+        margin-top:11%;
+        opacity: 1;
+    }
+}
+
+@-o-keyframes slideIn{
+    from {
+        margin-top: 30%;
+        opacity: 0;
+    }
+    
+    to {
+        margin-top:11%;
+        opacity: 1;
+    }
+}
+
+@-ms-keyframes slideIn{
+    from {
+        margin-top: 30%;
+        opacity: 0;
+    }
+    
+    to {
+        margin-top:11%;
+        opacity: 1;
+    }
 }
 
 @media screen and (max-width:768px){
