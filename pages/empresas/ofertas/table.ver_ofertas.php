@@ -65,7 +65,7 @@ while($fila = $objeto->fetch_assoc()){
             <div class="btn-group" role="group">
                 <a class="btn btn-dark" href="delete.php?id='.$idEmpresa'" class="btn btn-default"><i class="bi bi-eye"></i> Ver mas</span></a>
                 <a class="btn btn-dark" href="delete.php?id='.$idEmpresa'" class="btn btn-default"><i class="bi bi-pencil"></i> Modificar</span></a>	
-                <a class="btn btn-danger" href="opciones/ver_ofertas.ver.php?idEmpresa=$idEmpresa"><i class="bi bi-trash"></i> Eliminar</a>
+                <a class="btn btn-danger" href="opciones/ver_ofertas.eliminar.php?idEmpresa=$idEmpresa"><i class="bi bi-trash"></i> Eliminar</a>
             </div>
         </td>
     </tr>
