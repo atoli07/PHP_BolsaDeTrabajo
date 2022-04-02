@@ -104,7 +104,8 @@ CREATE TABLE `empresas` (
   `IdEmpresa` int(11) NOT NULL,
   `NombreEmpresa` varchar(50) NOT NULL,
   `Correo` varchar(50) NOT NULL,
-  `Contra` varchar(12) NOT NULL
+  `Contra` varchar(12) NOT NULL,
+  `url_logo` varchar(40) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
