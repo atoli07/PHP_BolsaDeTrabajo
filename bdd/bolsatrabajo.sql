@@ -1,4 +1,4 @@
--- phpMyAdmin SQL Dump
+﻿-- phpMyAdmin SQL Dump
 -- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
@@ -58,10 +58,10 @@ CREATE TABLE `datospersonales` (
 
 CREATE TABLE `detallesoferta` (
   `IdDetallesOferta` varchar(6) NOT NULL,
-  `AreaEmpresa` varchar(15) NOT NULL,
-  `CargoSolicitado` varchar(20) NOT NULL,
-  `TipoContratacion` varchar(15) NOT NULL,
-  `EducacionMinima` varchar(15) NOT NULL,
+  `AreaEmpresa` varchar(40) NOT NULL,
+  `CargoSolicitado` varchar(40) NOT NULL,
+  `TipoContratacion` varchar(30) NOT NULL,
+  `EducacionMinima` varchar(30) NOT NULL,
   `NivelExperencia` varchar(30) NOT NULL,
   `Edad` varchar(20) NOT NULL,
   `SalarioMin` decimal(10,0) NOT NULL,
@@ -230,7 +230,7 @@ CREATE TABLE `nivel` (
 
 CREATE TABLE `ofertas` (
   `IdOferta` varchar(6) NOT NULL,
-  `NombreOferta` varchar(15) NOT NULL,
+  `NombreOferta` varchar(45) NOT NULL,
   `Descripcion` text NOT NULL,
   `Estado` tinyint(1) NOT NULL,
   `IdEmpresa` int(11) NOT NULL,
