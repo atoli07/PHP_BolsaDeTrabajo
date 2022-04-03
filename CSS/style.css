@@ -60,6 +60,49 @@ div.info p{
     font-size: 14pt;
 }
 
+div.iniciar{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr;
+    gap: 10px;
+
+    grid-template-areas:"title              title"
+                        "imagen-iniciar     info-iniciar";
+}
+
+div.title{grid-area: title;}
+
+div.title h2{
+    font-size: 36pt;
+}
+
+div.imagen-iniciar{
+    grid-area: imagen-iniciar;
+}
+
+div.imagen-iniciar img{
+    display: block;
+    width: 50%;
+    height: 240px;
+    margin: auto;
+    border-radius: 100%;
+    box-shadow: -1px -3px 20px 4px rgba(0,0,0,0.63) inset;
+    -webkit-box-shadow: -1px -3px 20px 4px rgba(0,0,0,0.63) inset;
+    -moz-box-shadow: -1px -3px 20px 4px rgba(0,0,0,0.63) inset;
+}
+
+div.info-iniciar{
+    grid-area: info-iniciar;
+    text-align: justify;
+    font-size: 14pt;
+}
+
+div.button a{
+    -webkit-animation: bounce .5s infinite alternate;
+  -moz-animation: bounce .5s infinite alternate;
+  animation: bounce .5s infinite alternate;
+}
+
 /*      Página login        */
 div.contenedor-login{
     display: grid;
@@ -281,6 +324,16 @@ div.btn-group{
     100% {opacity:1;}
 }
 
+@-webkit-keyframes bounce {
+    to { -webkit-transform: scale(1.2); }
+  }
+  @-moz-keyframes bounce {
+    to { -moz-transform: scale(1.2); }
+  }
+  @keyframes bounce {
+    to { transform: scale(1.2); }
+  }
+
 @keyframes slideIn {
     from {
       margin-top: 30%;
@@ -343,17 +396,93 @@ div.btn-group{
 
 /*      Media queries       */
 @media screen and (max-width:768px){
+    div.iconos{
+        border-radius: 50%;
+        width: 55%;
+    }
+
+    div.iniciar{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr 1fr;
+
+        grid-template-areas:"title"
+                            "imagen-iniciar"
+                            "info-iniciar";
+    }
+    div.imagen-iniciar img{
+        width: 75%;
+        height: 240px;
+        border-radius: 50%;
+    }
+    
+    div.info-iniciar{
+        padding: 30px;
+    }
+
     div.contenedor-login{
         grid-template-columns: auto;
         grid-template-rows: 1fr 1fr;
         grid-template-areas: "imagen"
                              "formulario";
     }
-    div.imagen{
+    div.contenedor-login div.imagen{
         border-radius: 10px 10px 0px 0;
     }
 
     form.formulario{
         padding:20px;
+    }
+
+    section.contenedor-new-user div.formulario{
+        animation: none;
+    }
+
+    section.contenedor-new-user form{
+        padding: 15px;
+    }
+
+    div.contenedor-new-emp{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: "imagen"
+                             "formulario";
+    }
+
+    div.contenedor-new-emp div.imagen-emp h1{
+        width: 40vh;
+        font-size: 55pt;
+    }
+}
+
+@media (max-width: 991.98px) { 
+    div.iconos{
+        border-radius: 50%;
+        width: 55%;
+    }
+
+    div.contenedor-new-emp div.imagen-emp h1{
+        width: 40vh;
+        font-size: 55pt;
+    }
+
+    div.iniciar{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr 1fr;
+
+        grid-template-areas:"title"
+                            "imagen-iniciar"
+                            "info-iniciar";
+    }
+    div.imagen-iniciar img{
+        width: 40%;
+        height: 240px;
+        border-radius: 50%;
+    }
+    
+    div.info-iniciar{
+        padding: 30px;
     }
 }

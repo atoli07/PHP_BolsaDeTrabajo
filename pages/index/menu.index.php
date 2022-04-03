@@ -13,9 +13,6 @@
         <li class="nav-item">
           <a class="nav-link active shadow-sm" aria-current="page" href="index.php">Inicio</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link active shadow-sm" href="#">Ofertas</a>
-        </li>
       </ul>
       <a class="nav-link active text-white shadow-sm gap-3" href="login.php">Iniciar Sesión</a>
       <li class="nav-item dropdown">
