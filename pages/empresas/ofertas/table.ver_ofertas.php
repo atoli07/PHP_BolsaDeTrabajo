@@ -14,9 +14,6 @@
             die(); 
         }
     ?>
-    <?php
-        require_once('..\..\mod\menu_usuarios.php');
-    ?>
     
 <br>
 <br>

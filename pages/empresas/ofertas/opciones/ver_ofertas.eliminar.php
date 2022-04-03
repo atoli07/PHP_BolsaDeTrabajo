@@ -104,9 +104,9 @@ while($fila = $objeto->fetch_assoc()){
             if ($objeto == TRUE){
 
                 echo "Se borro";
-                header("location:../table.ver_ofertas.php");
+                header("location:../../../../empresas_ver_ofertas.php");
                 if($objetoD == TRUE){
-                    header("location:../table.ver_ofertas.php");
+                    header("location:../../../../empresas_ver_ofertas.php");
                 }
             }else{
         
@@ -116,7 +116,7 @@ while($fila = $objeto->fetch_assoc()){
         }
     if(isset($_POST['Cancelar'])) {
             echo "This is Button2 that is selected";
-            header("location:../table.ver_ofertas.php");
+            header("location:../../../../empresas_ver_ofertas.php");
         }
 
 ?>    

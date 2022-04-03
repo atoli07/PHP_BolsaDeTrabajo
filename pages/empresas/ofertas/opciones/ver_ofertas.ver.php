@@ -92,7 +92,7 @@ while($fila = $objeto->fetch_assoc()){
 
     if(isset($_POST['volver'])) {
             echo "This is Button2 that is selected";
-            header("location:../table.ver_ofertas.php");
+            header("location:../../../../empresas_ver_ofertas.php");
         }
 
 ?>    

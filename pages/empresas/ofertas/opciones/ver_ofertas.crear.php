@@ -28,35 +28,35 @@
 
             <br>
             <label class="alert-primary">Area Empresa:</label>
-            <input type="text" name="AreaEmpresa" id="AreaEmpresa" class="form-control" placeholder="Servicios, Telecomunicaciones, etc." minlength="5" maxlength="40" >
+            <input type="text" name="AreaEmpresa" id="AreaEmpresa" class="form-control" placeholder="Servicios, Telecomunicaciones, etc." minlength="5" maxlength="40" required>
 
             <br>
             <label class="alert-primary">Cargo Solicitado:</label>
-            <input type="text" name="CargoSolicitado" id="CargoSolicitado" class="form-control" placeholder="Asistente Contable, Cocinero, etc." minlength="5" maxlength="40" >  
+            <input type="text" name="CargoSolicitado" id="CargoSolicitado" class="form-control" placeholder="Asistente Contable, Cocinero, etc." minlength="5" maxlength="40" required>  
             
             <br>
             <label class="alert-primary">TipoContratacion :</label>
-            <input type="text" name="TipoContratacion" id="TipoContratacion" class="form-control" placeholder="Tiempo Completo" minlength="5" maxlength="15" >  
+            <input type="text" name="TipoContratacion" id="TipoContratacion" class="form-control" placeholder="Tiempo Completo" minlength="5" maxlength="15" required>  
 
             <br>
             <label class="alert-primary">Educación Minima :</label>
-            <input type="text" class="form-control" id="EducacionMinima" name="EducacionMinima" placeholder="Bachillerato" minlength="5" maxlength="15" >
+            <input type="text" class="form-control" id="EducacionMinima" name="EducacionMinima" placeholder="Bachillerato" minlength="5" maxlength="15" required>
 
             <br>
             <label class="alert-primary">Nivel Experencia:</label>
-            <input type="text" class="form-control" id="NivelExperencia" name="NivelExperencia" placeholder="sin experiencia" minlength="5" maxlength="30" >
+            <input type="text" class="form-control" id="NivelExperencia" name="NivelExperencia" placeholder="sin experiencia" minlength="5" maxlength="30" required>
                         
             <br>
             <label class="alert-primary">Edad:</label>
-            <input type="numeric" class="form-control" id="Edad" name="Edad" placeholder="0" min="18" max="100" >
+            <input type="numeric" class="form-control" id="Edad" name="Edad" placeholder="0" min="18" max="100" required>
 
             <br>
             <label class="alert-primary">Salario Minimo:</label>
-            <input type="numeric" class="form-control" id="SalarioMin" name="SalarioMin" placeholder="$" min="0" max="1000" >
+            <input type="numeric" class="form-control" id="SalarioMin" name="SalarioMin" placeholder="$" min="0" max="1000" required>
 
             <br>
             <label class="alert-primary">Salario Maximo:</label>
-            <input type="numeric" class="form-control" id="SalarioMax" name="SalarioMax" placeholder="$" min="0" max="1000" >
+            <input type="numeric" class="form-control" id="SalarioMax" name="SalarioMax" placeholder="$" min="0" max="1000" required>
 
             <br>
             <input class='btn btn-primary btn-block' type="submit" name="guardarOferta" value="GUARDAR OFERTA"/>
@@ -113,7 +113,7 @@ if(isset($_POST['guardarOferta'])) {
         echo "Error: " . $sql . "<br>" . $BDD_DSS->error;
     }
 
-    header("location:../table.ver_ofertas.php");
+    header("location:../../../../empresas_ver_ofertas.php");
 }
 
 ?>
