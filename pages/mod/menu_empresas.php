@@ -18,7 +18,7 @@
                         Ofertas
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="empresas_ofertas_form.php">Crear nueva oferta</a></li>
+                        <li><a class="dropdown-item" href="empresas_crear_ofertas.php">Crear nueva oferta</a></li>
                         <li>
                             <hr class="dropdown-divider">
                         </li>

@@ -1,43 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-    <?php
-        require_once('..\..\..\mod\header.php');
-    ?>
-<br>
-<br>
-<div class="container-fluid text-center">
-    <h2><i class="bi-x-octagon-fill"></i> SEGURO QUE DESEA ELIMINAR LA SIGUIENTE OFERTA? <i class="bi-x-octagon-fill"></i></h2>
+<h2 class="text-center"><i class="bi-x-octagon-fill"></i> SEGURO QUE DESEA ELIMINAR LA SIGUIENTE OFERTA? <i class="bi-x-octagon-fill"></i></h2>
 <?php
-//sección
-session_start();
-//para que no muestre errores con el php
-error_reporting(0);
-//que la pagina actual solo la vea el que ha valido la sesion con usuario y contraseña
-$varsesion = $_SESSION['usuario'];
-if($varsesion == null || $varsesion ==''){
-    echo "Usted no puede estar aqui";
-    die(); 
-}
-
-
-include_once("../../../../Funciones/conexión/BDD.php");
+include_once("Funciones/conexión/BDD.php");
 $EmpresaUsuario = $_SESSION['usuario'];
 $IdOferta = $_GET['idOferta'];
 
 $SQL = "SELECT* FROM empresas JOIN ofertas ON ofertas.IdEmpresa = empresas.IdEmpresa 
 JOIN detallesoferta ON ofertas.IdDetallesOferta = detallesoferta.IdDetallesOferta 
-WHERE empresas.Correo = '" . $EmpresaUsuario  . "' AND ofertas.IdOferta = '" .$IdOferta. "'";
+WHERE empresas.Correo = '" . $EmpresaUsuario  . "' AND ofertas.IdOferta = '" . $IdOferta . "'";
 //WHERE empresas.Correo = 'usuario@vsr.sv.cv'
 
 $objeto = $BDD_DSS->query($SQL);
 $NumeroFila = '1';
 $IdDetallesOferta;
 
-while($fila = $objeto->fetch_assoc()){
+while ($fila = $objeto->fetch_assoc()) {
     $NombreOferta = $fila['NombreOferta'];
     $Descripcion = $fila['Descripcion'];
     $Estado = $fila['Estado'];
-    $IdDetallesOferta =$fila['IdDetallesOferta'];
+    $IdDetallesOferta = $fila['IdDetallesOferta'];
     $AreaEmpresa = $fila['AreaEmpresa'];
     $CargoSolicitado = $fila['CargoSolicitado'];
     $TipoContratacion = $fila['TipoContratacion'];
@@ -51,14 +31,13 @@ while($fila = $objeto->fetch_assoc()){
     $estado;
     $estado_color;
 
-        if($fila['Estado']==1){
-            $estado = "Disponible";
-            $estado_color = 'style="color: green;"';
-        }
-        else{
-            $estado = "No disponible";
-            $estado_color = 'style="color: red;"';
-        }
+    if ($fila['Estado'] == 1) {
+        $estado = "Disponible";
+        $estado_color = 'style="color: green;"';
+    } else {
+        $estado = "No disponible";
+        $estado_color = 'style="color: red;"';
+    }
 
     $OfertaEmpresa = <<<tabla
         <div class="container border border-dark border-3">
@@ -90,43 +69,42 @@ while($fila = $objeto->fetch_assoc()){
     $NumeroFila = $NumeroFila + 1;
 }
 
-    if(isset($_POST['Eliminar'])) {
-            //echo "This is Button1 that is selected";
-            echo $IdOferta.' ';
-            echo $IdDetallesOferta;
+if (isset($_POST['Eliminar'])) {
+    //echo "This is Button1 that is selected";
+    echo $IdOferta . ' ';
+    echo $IdDetallesOferta;
 
-            $BorrarOfertas = "DELETE FROM ofertas WHERE ofertas.IdOferta = '$IdOferta'";
-            $BorrarDofertas = "DELETE FROM detallesoferta WHERE detallesoferta.IdDetallesOferta = '$IdDetallesOferta'";
+    $BorrarOfertas = "DELETE FROM ofertas WHERE ofertas.IdOferta = '$IdOferta'";
+    $BorrarDofertas = "DELETE FROM detallesoferta WHERE detallesoferta.IdDetallesOferta = '$IdDetallesOferta'";
 
-            $objeto = $BDD_DSS->query($BorrarOfertas);
-            $objetoD = $BDD_DSS->query($BorrarDofertas);
+    $objeto = $BDD_DSS->query($BorrarOfertas);
+    $objetoD = $BDD_DSS->query($BorrarDofertas);
 
-            if ($objeto == TRUE){
+    if ($objeto == TRUE) {
 
-                echo "Se borro";
-                header("location:../../../../empresas_ver_ofertas.php");
-                if($objetoD == TRUE){
-                    header("location:../../../../empresas_ver_ofertas.php");
-                }
-            }else{
-        
-                echo "Error";
-                
-            }
+        echo "Se borro";
+        header("location:empresas_ver_ofertas.php");
+        if ($objetoD == TRUE) {
+            header("location:empresas_ver_ofertas.php");
         }
-    if(isset($_POST['Cancelar'])) {
-            echo "This is Button2 that is selected";
-            header("location:../../../../empresas_ver_ofertas.php");
-        }
+    } else {
 
-?>    
-            <div class="w-100"></div>
-                <form method="post">
-                    <div class="p-3 d-grid gap-2 border bg-light">
-                    <input class='btn btn-danger' type="submit" name="Eliminar" value="Eliminar"/>
-                        <input class="btn btn-dark btn-block" type="submit" name="Cancelar" value="Cancelar"/>
-                    </div> 
-                </form>             
-            </div>
-            <br>
+        echo "Error";
+    }
+}
+if (isset($_POST['Cancelar'])) {
+    echo "This is Button2 that is selected";
+    header("location:empresas_ver_ofertas.php");
+}
+
+?>
+<div class="w-100"></div>
+<form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>">
+    <div class="p-3 d-grid gap-2 border bg-light">
+        <input class='btn btn-danger' type="submit" name="Eliminar" value="Eliminar" />
+        <input class="btn btn-dark btn-block" type="submit" name="Cancelar" value="Cancelar" />
+    </div>
+</form>
+</div>
+<br>
 </div>

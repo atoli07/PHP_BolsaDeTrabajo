@@ -1,26 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-    <?php
-        require_once('..\..\mod\header.php');
-    ?>
-    <?php
-        session_start();
-        //para que no muestre errores con el php
-        error_reporting(0);
-        //que la pagina actual solo la vea el que ha valido la sesion con usuario y contraseña
-        $varsesion = $_SESSION['usuario'];
-        if($varsesion == null || $varsesion ==''){
-            echo "Usted no puede estar aqui";
-            die(); 
-        }
-    ?>
-    
 <br>
 <br>
 <div class="container-fluid">
     <h2>LISTA DE OFERTAS</h2>
     <div class="d-flex flex-row">
-        <a href="opciones/ver_ofertas.crear.php"  type="button" class="btn btn-outline-primary"><i class="bi bi-bookmark-plus-fill"></i> Agregar nueva oferta</a>
+        <a href="empresas_crear_ofertas.php"  type="button" class="btn btn-outline-primary"><i class="bi bi-bookmark-plus-fill"></i> Agregar nueva oferta</a>
     </div>
     <table class="table table-striped" id="ver-oferta">
         <thead>
@@ -29,7 +12,7 @@
                 <th scope="col">OFERTA</th>
                 <th scope="col">ESTADO</th>
                 <th scope="col">ÁREA DE EMPRESA</th>
-                <th scope="col">CaCARGO SOLICITADO</th>
+                <th scope="col">CARGO SOLICITADO</th>
                 <th>OPCIONES</th>
             </tr>
         </thead>
@@ -38,7 +21,7 @@
 
 $EmpresaUsuario = $_SESSION['usuario'];
 
-include_once("../../../Funciones/conexión/BDD.php");
+include_once("Funciones/conexión/BDD.php");
 
 $SQL = "SELECT empresas.IdEmpresa, ofertas.IdOferta, NombreOferta, Estado, detallesoferta.AreaEmpresa, detallesoferta.CargoSolicitado, detallesoferta.TipoContratacion
 FROM empresas JOIN ofertas ON ofertas.IdEmpresa = empresas.IdEmpresa 
@@ -77,9 +60,9 @@ while($fila = $objeto->fetch_assoc()){
         <td>$CargoSolicitado</td>
         <td>
             <div class="btn-group" role="group">
-                <a class="btn btn-dark" href="opciones/ver_ofertas.ver.php?idOferta=$IdOferta" class="btn btn-default"><i class="bi bi-eye"></i> Ver mas</span></a>
-                <a class="btn btn-dark disabled" href="opciones/ver_ofertas.modificar.php?idOferta='.$IdOferta'" class="btn btn-default" name='Modific' disabled><i class="bi bi-pencil"></i> Modificar</span></a>	
-                <a class="btn btn-danger" href="opciones/ver_ofertas.eliminar.php?idOferta=$IdOferta"><i class="bi bi-trash"></i> Eliminar</a>
+                <a class="btn btn-dark" href="empresas_ver_oferta.php?idOferta=$IdOferta" class="btn btn-default"><i class="bi bi-eye"></i> Ver mas</span></a>
+                <a class="btn btn-dark disabled" href="empresas_modificar_oferta.php?idOferta='.$IdOferta'" class="btn btn-default" name='Modific' disabled><i class="bi bi-pencil"></i> Modificar</span></a>	
+                <a class="btn btn-danger" href="empresas_eliminar_ofertas.php?idOferta=$IdOferta"><i class="bi bi-trash"></i> Eliminar</a>
             </div>
         </td>
     </tr>
