@@ -81,7 +81,7 @@ while($fila = $objeto->fetch_assoc()){
         <td>
             <div class="btn-group" role="group">
                 <a class="btn btn-dark" href="opciones/ver_ofertas.ver.php?idOferta=$IdOferta" class="btn btn-default"><i class="bi bi-eye"></i> Ver mas</span></a>
-                <a class="btn btn-dark" href="opciones/ver_ofertas.modificar.php?idOferta='.$IdOferta'" class="btn btn-default"><i class="bi bi-pencil"></i> Modificar</span></a>	
+                <a class="btn btn-dark disabled" href="opciones/ver_ofertas.modificar.php?idOferta='.$IdOferta'" class="btn btn-default" name='Modific' disabled><i class="bi bi-pencil"></i> Modificar</span></a>	
                 <a class="btn btn-danger" href="opciones/ver_ofertas.eliminar.php?idOferta=$IdOferta"><i class="bi bi-trash"></i> Eliminar</a>
             </div>
         </td>
