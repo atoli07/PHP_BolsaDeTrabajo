@@ -3,12 +3,27 @@
     <?php
         require_once('..\..\mod\header.php');
     ?>
+    <?php
+        session_start();
+        //para que no muestre errores con el php
+        error_reporting(0);
+        //que la pagina actual solo la vea el que ha valido la sesion con usuario y contraseña
+        $varsesion = $_SESSION['usuario'];
+        if($varsesion == null || $varsesion ==''){
+            echo "Usted no puede estar aqui";
+            die(); 
+        }
+    ?>
+    <?php
+        require_once('..\..\mod\menu_usuarios.php');
+    ?>
+    
 <br>
 <br>
 <div class="container-fluid">
     <h2>LISTA DE OFERTAS</h2>
     <div class="d-flex flex-row">
-        <button type="button" class="btn btn-outline-primary"><i class="bi bi-bookmark-plus-fill"></i> Agregar nueva oferta</button>
+        <a href="opciones/ver_ofertas.crear.php"  type="button" class="btn btn-outline-primary"><i class="bi bi-bookmark-plus-fill"></i> Agregar nueva oferta</a>
     </div>
     <table class="table table-striped" id="ver-oferta">
         <thead>
@@ -24,20 +39,22 @@
         <tbody>
 <?php
 
+$EmpresaUsuario = $_SESSION['usuario'];
+
 include_once("../../../Funciones/conexión/BDD.php");
 
-$SQL = "SELECT empresas.IdEmpresa, NombreOferta, Estado, detallesoferta.AreaEmpresa, detallesoferta.CargoSolicitado, detallesoferta.TipoContratacion
+$SQL = "SELECT empresas.IdEmpresa, ofertas.IdOferta, NombreOferta, Estado, detallesoferta.AreaEmpresa, detallesoferta.CargoSolicitado, detallesoferta.TipoContratacion
 FROM empresas JOIN ofertas ON ofertas.IdEmpresa = empresas.IdEmpresa 
-JOIN detallesoferta ON ofertas.IdDetallesOferta = detallesoferta.IdDetallesOferta";
-//WHERE empresas.Correo = 'usuario@vsr.sv.cv'
+JOIN detallesoferta ON ofertas.IdDetallesOferta = detallesoferta.IdDetallesOferta
+WHERE empresas.Correo = '". $EmpresaUsuario ."'";
 
 $objeto = $BDD_DSS->query($SQL);
 $NumeroFila = '1';
 
 while($fila = $objeto->fetch_assoc()){
     $idEmpresa = $fila['IdEmpresa'];
+    $IdOferta = $fila['IdOferta'];
     $NombreOferta = $fila['NombreOferta'];
-
     $AreaEmpresa = $fila['AreaEmpresa'];
     $CargoSolicitado = $fila['CargoSolicitado'];
     // $TipoContratacion = $fila['TipoContratacion'];
@@ -63,9 +80,9 @@ while($fila = $objeto->fetch_assoc()){
         <td>$CargoSolicitado</td>
         <td>
             <div class="btn-group" role="group">
-                <a class="btn btn-dark" href="delete.php?id='.$idEmpresa'" class="btn btn-default"><i class="bi bi-eye"></i> Ver mas</span></a>
-                <a class="btn btn-dark" href="delete.php?id='.$idEmpresa'" class="btn btn-default"><i class="bi bi-pencil"></i> Modificar</span></a>	
-                <a class="btn btn-danger" href="opciones/ver_ofertas.eliminar.php?idEmpresa=$idEmpresa"><i class="bi bi-trash"></i> Eliminar</a>
+                <a class="btn btn-dark" href="opciones/ver_ofertas.ver.php?idOferta=$IdOferta" class="btn btn-default"><i class="bi bi-eye"></i> Ver mas</span></a>
+                <a class="btn btn-dark" href="opciones/ver_ofertas.modificar.php?idOferta='.$IdOferta'" class="btn btn-default"><i class="bi bi-pencil"></i> Modificar</span></a>	
+                <a class="btn btn-danger" href="opciones/ver_ofertas.eliminar.php?idOferta=$IdOferta"><i class="bi bi-trash"></i> Eliminar</a>
             </div>
         </td>
     </tr>

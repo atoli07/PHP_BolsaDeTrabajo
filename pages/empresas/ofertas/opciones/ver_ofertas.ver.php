@@ -6,7 +6,7 @@
 <br>
 <br>
 <div class="container-fluid text-center">
-    <h2><i class="bi-x-octagon-fill"></i> SEGURO QUE DESEA ELIMINAR LA SIGUIENTE OFERTA? <i class="bi-x-octagon-fill"></i></h2>
+    <h2><i class="bi bi-card-list"></i> DETALLES OFERTA <i class="bi bi-card-list"></i></h2>
 <?php
 //sección
 session_start();
@@ -63,12 +63,12 @@ while($fila = $objeto->fetch_assoc()){
     $OfertaEmpresa = <<<tabla
         <div class="container border border-dark border-3">
             <div class="row g-2">
-                <div class="col p-1"><h3><i class="bi bi-clipboard-x"></i> $NombreOferta</h3></div>
+                <div class="col p-1"><h3><i class="bi bi-clipboard-plus"></i> $NombreOferta</h3></div>
                 <div class="w-100"></div>
                 <div class="p-3 border bg-light">
                     <h5>Descrición:</h5>
                     <p>
-                        $Descripcion 
+                        $Descripcion
                     </p>
                 </div>
                 <div class="w-100"></div>
@@ -90,31 +90,7 @@ while($fila = $objeto->fetch_assoc()){
     $NumeroFila = $NumeroFila + 1;
 }
 
-    if(isset($_POST['Eliminar'])) {
-            //echo "This is Button1 that is selected";
-            echo $IdOferta.' ';
-            echo $IdDetallesOferta;
-
-            $BorrarOfertas = "DELETE FROM ofertas WHERE ofertas.IdOferta = '$IdOferta'";
-            $BorrarDofertas = "DELETE FROM detallesoferta WHERE detallesoferta.IdDetallesOferta = '$IdDetallesOferta'";
-
-            $objeto = $BDD_DSS->query($BorrarOfertas);
-            $objetoD = $BDD_DSS->query($BorrarDofertas);
-
-            if ($objeto == TRUE){
-
-                echo "Se borro";
-                header("location:../table.ver_ofertas.php");
-                if($objetoD == TRUE){
-                    header("location:../table.ver_ofertas.php");
-                }
-            }else{
-        
-                echo "Error";
-                
-            }
-        }
-    if(isset($_POST['Cancelar'])) {
+    if(isset($_POST['volver'])) {
             echo "This is Button2 that is selected";
             header("location:../table.ver_ofertas.php");
         }
@@ -123,8 +99,7 @@ while($fila = $objeto->fetch_assoc()){
             <div class="w-100"></div>
                 <form method="post">
                     <div class="p-3 d-grid gap-2 border bg-light">
-                    <input class='btn btn-danger' type="submit" name="Eliminar" value="Eliminar"/>
-                        <input class="btn btn-dark btn-block" type="submit" name="Cancelar" value="Cancelar"/>
+                    <input class="btn btn-primary btn-block" type="submit" name="volver" value="Volver a la lista"/>
                     </div> 
                 </form>             
             </div>

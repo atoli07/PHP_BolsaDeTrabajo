@@ -7,13 +7,22 @@
     <title>CREAR OFERTA</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
+<?php
+    $IdOferta = $_GET['idOferta'];
+
+    $ofertaSelecionada = "SELECT* FROM ofertas WHERE ofertas.IdOferta = '" .$IdOferta. "'";
+    $objeto = $BDD_DSS->query($ofertaSelecionada);
+
+    $fila = $objeto->fetch_assoc();
+?>
+
 <body>
     <form method="post">
         <div class="container">
-            <h1 class=" text-center alert-primary">DATOS DE LA OFERTA</h1>
+            <h1 class=" text-center alert-primary">DATOS DE LA OFERTA A MODIFICAR</h1>
             <br>
             <label class="alert-primary">Nombre Oferta: </label>
-            <input type="text" name="NombreOferta" id="NombreOferta" class="form-control" placeholder="Ingeniería de sistemas" minlength="5" maxlength="30" required>
+            <input type="text" name="NombreOferta" value="<?php echo $fila['NombreOferta'] ?>" id="NombreOferta" class="form-control" placeholder="Ingeniería de sistemas" minlength="5" maxlength="30" required>
 
             <br>
             <label class="alert-primary">Descripción: </label>
@@ -48,7 +57,7 @@
                         
             <br>
             <label class="alert-primary">Edad:</label>
-            <input type="numeric" class="form-control" id="Edad" name="Edad" placeholder="0" min="18" max="100" >
+            <input type="numeric" value='xd' class="form-control" id="Edad" name="Edad" placeholder="0" min="18" max="100" >
 
             <br>
             <label class="alert-primary">Salario Minimo:</label>
@@ -64,7 +73,6 @@
         </div>
     </form>
 <?php
-
 if(isset($_POST['guardarOferta'])) {
     include_once("../../../../Funciones/conexión/BDD.php");
 
@@ -81,39 +89,28 @@ if(isset($_POST['guardarOferta'])) {
     $SalarioMin = $_POST['SalarioMin'];
     $SalarioMax = $_POST['SalarioMax'];
 
-    //ULTIMA OFERTA
-    $UltimaOferta = "SELECT* FROM ofertas ORDER BY ofertas.IdOferta DESC LIMIT 1";
-    $OfertaUltima = $BDD_DSS->query($UltimaOferta);
-    $fila = $OfertaUltima->fetch_assoc();
+    
+    $nombre1 = $fila['NombreOferta'];
+    echo $nombre1;
 
-    $idUltimaOferta = $fila['IdOferta'];
-    //incremento
-    $numeroID = substr($idUltimaOferta, -3);
-    $numeroID = $numeroID + 1;
-    $letrasOfertas = 'OFE'.$numeroID;
-    $letrasDetallesOfertas = 'DOF'.$numeroID;
-    //empresacreation
-    $idempresa = 10001;
-            //xd
-    echo $letrasOfertas;
+    // $IngresardatosOfertaDetalles = "INSERT INTO detallesoferta(IdDetallesOferta, AreaEmpresa, CargoSolicitado, TipoContratacion, EducacionMinima, NivelExperencia, Edad, SalarioMin, SalarioMax) VALUES
+    // ('$letrasDetallesOfertas','$AreaEmpresa','$CargoSolicitado','$TipoContratacion','$EducacionMinima','$NivelExperencia','$Edad','$SalarioMin','$SalarioMax')
+    // WHERE";
 
-    $IngresardatosOfertaDetalles = "INSERT INTO detallesoferta(IdDetallesOferta, AreaEmpresa, CargoSolicitado, TipoContratacion, EducacionMinima, NivelExperencia, Edad, SalarioMin, SalarioMax) VALUES
-    ('$letrasDetallesOfertas','$AreaEmpresa','$CargoSolicitado','$TipoContratacion','$EducacionMinima','$NivelExperencia','$Edad','$SalarioMin','$SalarioMax')";
+    // $IngresardatosOferta = "INSERT INTO ofertas(IdOferta, NombreOferta, Descripcion, Estado, IdEmpresa, IdDetallesOferta) 
+    // VALUES ('$letrasOfertas','$NombreOferta','$Descripcion','$Estado','$idempresa','$letrasDetallesOfertas')";
 
-    $IngresardatosOferta = "INSERT INTO ofertas(IdOferta, NombreOferta, Descripcion, Estado, IdEmpresa, IdDetallesOferta) 
-    VALUES ('$letrasOfertas','$NombreOferta','$Descripcion','$Estado','$idempresa','$letrasDetallesOfertas')";
-
-    $datosDetalles = $BDD_DSS->query($IngresardatosOfertaDetalles);
-    $datosOfertas = $BDD_DSS->query($IngresardatosOferta);
+    // $datosDetalles = $BDD_DSS->query($IngresardatosOfertaDetalles);
+    // $datosOfertas = $BDD_DSS->query($IngresardatosOferta);
             
-    if ($datosOfertas == TRUE){
-        echo 'La oferta: ' . $NombreOferta . ' a sido guardado';
-    }
-    else{
-        echo "Error: " . $sql . "<br>" . $BDD_DSS->error;
-    }
+    // if ($datosOfertas == TRUE){
+    //     echo 'La oferta: ' . $NombreOferta . ' a sido guardado';
+    // }
+    // else{
+    //     echo "Error: " . $sql . "<br>" . $BDD_DSS->error;
+    // }
 
-    header("location:../table.ver_ofertas.php");
+    // header("location:../table.ver_ofertas.php");
 }
 
 ?>
