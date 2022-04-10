@@ -6,7 +6,7 @@ error_reporting(0);
 //que la pagina actual solo la vea el que ha valido la sesion con usuario y contraseña
 $varsesion = $_SESSION['usuario'];
 if($varsesion == null || $varsesion ==''){
-    echo "Usted no puede estar aqui";
+    header("location:invalido.php");
     die(); 
 }
 
