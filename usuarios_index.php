@@ -10,17 +10,16 @@ if($varsesion == null || $varsesion ==''){
     die(); 
 }
 
- require_once('pages\mod\header.php');
+require_once('pages\mod\header.php');
 ?>
   <body>
     <?php
-        require_once('pages\mod\menu_usuarios.php');
-    ?>
+        require_once('pages\mod\menu_usuarios.php');?>
     <?php
         require_once('pages\usuarios\perfil_usuario\content.perfil_usuario.php');
     ?>
     <?php
-        require_once('pages\usuarios\index\content.index.php');
+        include_once('pages\usuarios\index\content.index.php');
     ?>
   </body>
 </html>

@@ -26,7 +26,8 @@ include_once("Funciones/conexión/BDD.php");
 $SQL = "SELECT empresas.IdEmpresa, ofertas.IdOferta, NombreOferta, Estado, detallesoferta.AreaEmpresa, detallesoferta.CargoSolicitado, detallesoferta.TipoContratacion
 FROM empresas JOIN ofertas ON ofertas.IdEmpresa = empresas.IdEmpresa 
 JOIN detallesoferta ON ofertas.IdDetallesOferta = detallesoferta.IdDetallesOferta
-WHERE empresas.Correo = '". $EmpresaUsuario ."'";
+";
+// WHERE empresas.Correo = '". $EmpresaUsuario ."'
 
 $objeto = $BDD_DSS->query($SQL);
 $NumeroFila = '1';
