@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 <form method="post">
     <div class="container">
         <h1 class=" text-center alert-primary">DATOS DE LA OFERTA</h1>
@@ -53,6 +54,84 @@
 
     </div>
 </form>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CREAR OFERTA</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<?php
+    session_start();
+    //para que no muestre errores con el php
+    error_reporting(0);
+    //que la pagina actual solo la vea el que ha valido la sesion con usuario y contraseña
+    $varsesion = $_SESSION['usuario'];
+    if($varsesion == null || $varsesion ==''){
+        echo "Usted no puede estar aqui";
+        die(); 
+    }    
+?>
+<body>
+    <form method="post">
+        <div class="container">
+            <h1 class=" text-center alert-primary">DATOS DE LA OFERTA</h1>
+            <br>
+            <label class="alert-primary">Nombre Oferta: </label>
+            <input type="text" name="NombreOferta" id="NombreOferta" class="form-control" placeholder="Ingeniería de sistemas" minlength="5" maxlength="30" required>
+
+            <br>
+            <label class="alert-primary">Descripción: </label>
+            <textarea id="descripcion" name="descripcion" class="form-control" placeholder="Ingrese descripción de la Ofertas" required></textarea>
+     
+            <br>
+            <label class="alert-primary">Estado:</label>
+            <select id="Estado" name="Estado" class="form-control">
+                <option value="1">DISPONIBLES</option>
+                <option value="0">NO DISPONIBLES</option>
+            </select>
+
+            <br>
+            <label class="alert-primary">Area Empresa:</label>
+            <input type="text" name="AreaEmpresa" id="AreaEmpresa" class="form-control" placeholder="Servicios, Telecomunicaciones, etc." minlength="5" maxlength="40" required>
+
+            <br>
+            <label class="alert-primary">Cargo Solicitado:</label>
+            <input type="text" name="CargoSolicitado" id="CargoSolicitado" class="form-control" placeholder="Asistente Contable, Cocinero, etc." minlength="5" maxlength="40" required>  
+            
+            <br>
+            <label class="alert-primary">TipoContratacion :</label>
+            <input type="text" name="TipoContratacion" id="TipoContratacion" class="form-control" placeholder="Tiempo Completo" minlength="5" maxlength="15" required>  
+
+            <br>
+            <label class="alert-primary">Educación Minima :</label>
+            <input type="text" class="form-control" id="EducacionMinima" name="EducacionMinima" placeholder="Bachillerato" minlength="5" maxlength="15" required>
+
+            <br>
+            <label class="alert-primary">Nivel Experencia:</label>
+            <input type="text" class="form-control" id="NivelExperencia" name="NivelExperencia" placeholder="sin experiencia" minlength="5" maxlength="30" required>
+                        
+            <br>
+            <label class="alert-primary">Edad:</label>
+            <input type="numeric" class="form-control" id="Edad" name="Edad" placeholder="0" min="18" max="100" required>
+
+            <br>
+            <label class="alert-primary">Salario Minimo:</label>
+            <input type="numeric" class="form-control" id="SalarioMin" name="SalarioMin" placeholder="$" min="0" max="1000" required>
+
+            <br>
+            <label class="alert-primary">Salario Maximo:</label>
+            <input type="numeric" class="form-control" id="SalarioMax" name="SalarioMax" placeholder="$" min="0" max="1000" required>
+
+            <br>
+            <input class='btn btn-primary btn-block' type="submit" name="guardarOferta" value="GUARDAR OFERTA"/>
+            
+        </div>
+    </form>
+>>>>>>> Stashed changes
 <?php
 
 if (isset($_POST['guardarOferta'])) {
@@ -80,8 +159,14 @@ if (isset($_POST['guardarOferta'])) {
     //incremento
     $numeroID = substr($idUltimaOferta, -3);
     $numeroID = $numeroID + 1;
+<<<<<<< Updated upstream
     $letrasOfertas = 'OFE' . $numeroID;
     $letrasDetallesOfertas = 'DOF' . $numeroID;
+=======
+    $letrasOfertas = 'OFE'.$numeroID;
+    $letrasDetallesOfertas = 'DOF'.$numeroID;
+    
+>>>>>>> Stashed changes
     //empresacreation
     $idempresa = 10001;
     //xd
@@ -98,10 +183,20 @@ if (isset($_POST['guardarOferta'])) {
 
     if ($datosOfertas == TRUE) {
         echo 'La oferta: ' . $NombreOferta . ' a sido guardado';
+<<<<<<< Updated upstream
     } else {
         echo "Error: " . $sql . "<br>" . $BDD_DSS->error;
     }
 
     header("location:empresas_ver_ofertas.php");
+=======
+        header("location:../table.ver_ofertas.php");    
+    }
+    else{
+        echo "Error: " . $sql . "<br>" . $BDD_DSS->error;
+    }
+
+    
+>>>>>>> Stashed changes
 }
 ?>

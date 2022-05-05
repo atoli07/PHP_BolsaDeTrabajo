@@ -69,10 +69,17 @@ while ($fila = $objeto->fetch_assoc()) {
     $NumeroFila = $NumeroFila + 1;
 }
 
+<<<<<<< Updated upstream
 if (isset($_POST['volver'])) {
     echo "This is Button2 that is selected";
     header("location:empresas_ver_ofertas.php");
 }
+=======
+    if(isset($_POST['volver'])) {
+            echo "This is Button2 that is selected";
+            header("location:../table.ver_ofertas.php");
+        }
+>>>>>>> Stashed changes
 
 ?>
 <div class="w-100"></div>

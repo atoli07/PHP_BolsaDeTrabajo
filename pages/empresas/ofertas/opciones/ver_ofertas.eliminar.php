@@ -82,10 +82,27 @@ if (isset($_POST['Eliminar'])) {
 
     if ($objeto == TRUE) {
 
+<<<<<<< Updated upstream
         echo "Se borro";
         header("location:empresas_ver_ofertas.php");
         if ($objetoD == TRUE) {
             header("location:empresas_ver_ofertas.php");
+=======
+                echo "Se borro";
+                header("location:../../../../empresas_ver_ofertas.php");
+                if($objetoD == TRUE){
+                    header("location:../../../../empresas_ver_ofertas.php");
+                }
+            }else{
+        
+                echo "Error";
+                
+            }
+        }
+    if(isset($_POST['Cancelar'])) {
+            echo "This is Button2 that is selected";
+            header("location:../table.ver_ofertas.php");
+>>>>>>> Stashed changes
         }
     } else {
 
